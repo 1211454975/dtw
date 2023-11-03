@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic time warping</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="inner contact">
+                <!-- Form Area -->
+	<div class="contact-form">
+		<!-- Form -->
+			<!-- Left Inputs -->
+			<div class="col-xs-12 wow animated slideInLeft" data-wow-delay=".5s">
+				<!--<div class="form-group col-xs-2" style="display:inline-block">
+					<label>Random dataset</label></br>
+					<input type="checkbox"></input>
+				</div> -->
+				<label class="container form-group col-xs-2">Random sequence
+				  <input class="randomseq" name="randomseq" type="checkbox">
+				  <span class="checkmark"></span>
+				</label>
+				<div class="form-group col-xs-4" style="display:inline-block">
+					<label>Sequence 1</label>
+					<input name="sequence1" id="sequence1" class="form"></input>
+				</div>
+				<div class="form-group col-xs-4" style="display:inline-block">
+					<label>Sequence 2</label>
+					<input name="sequence2" id="sequence2" class="form"></input>	
+				</div>
+				<div class="form-group col-xs-2" style="display:inline-block">
+				<!-- Send Button -->
+					
+					<button style="margin-top:25px" id="target" name="submit" class="form-btn semibold">Generate</button> 
+				</div>
+			
+			
+			</div><!-- End Left Inputs -->
+			<!-- Right Inputs -->
+			
+			
+			<div class="grid-container col-xs-12">
+				<div class="common">
+					<div class="grid-item col-xs-6 classic_dtw">
+						<h1>Classic DTW</h1>
+						<div id="dtw-chart"></div>
+						<table class="comicGreen" id="dtw-table" border="1"></table>
+					</div>
+				<div class="grid-item col-xs-6 weighted_dtw">
+					<h1>Weighted DTW</h1>
+					<div class="slidecontainer">
+					  <input step="0.001" type="range" min="-1" max="1" value="0" class="slider" id="myRangeWeighted">
+					  <p>w<sub>max</sub>: <span id="demoWeighted">0</span></p>
+					</div>
+					<div class="slidecontainer">
+						<input step="0.001" type="range" min="-1" max="1" value="0" class="slider" id="myRangeG">
+						<p>g: <span id="demoG">0</span></p>
+					  </div>
+					<div id="wdtw-chart" ></div>
+					<table class="comicGreen" id="wdtw-table" border="1"></table>
+				</div>  
+			<div class="grid-item col-xs-6 adaptive_cost_dtw">
+				<h1>Adaptive cost DTW</h1>
+				<div class="slidecontainer">
+					<input step="0.001" type="range" min="-1" max="1" value="0" class="slider" id="myRangeACG">
+					<p>g: <span id="demoACG">0</span></p>
+				  </div>
+				<div id="acdtw-chart" ></div>
+				<table class="comicGreen" id="acdtw-table" border="1"></table>
+			</div>
+			<div class="grid-item col-xs-6 enhanced_dtw">
+				<h1>Enhanced weighted DTW</h1>
+				<div id="ewdtw-chart"></div>
+				<table class="comicGreen" id="ewdtw-table" border="1"></table>
+			</div>
+			</div>
+			</div>
+			<!-- End Right Inputs -->
+			<!-- Bottom Submit -->
+			<!-- End Bottom Submit -->
+			<!-- Clear -->
+			<div class="clear"></div>
+	
+	</div><!-- End Contact Form Area -->
+</div><!-- End Inner -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="plotly.min.js"></script>
+<script src="dtw.js"></script>
+<script src="wdtw.js"></script>
+<script src="ewdtw.js"></script>
+<script src="ac-dtw.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
